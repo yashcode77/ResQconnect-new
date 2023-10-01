@@ -1,7 +1,9 @@
 import React from 'react';
 import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
 import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
-import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
+import { GrUserAdmin, GrAlert } from 'react-icons/gr';
+import { GoOrganization, GoAlertFill } from 'react-icons/go';
+import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft, BsChatText } from 'react-icons/bs';
 import { BiColorFill } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
@@ -475,7 +477,7 @@ export const links = [
     links: [
       {
         name: 'Admin',
-        icon: <FiShoppingBag />,
+        icon: <GrUserAdmin />,
       },
     ],
   },
@@ -485,15 +487,15 @@ export const links = [
     links: [
       {
         name: 'Agencies',
-        icon: <AiOutlineShoppingCart />,
+        icon: <GoOrganization />,
       },
       {
         name: 'Alerts',
-        icon: <IoMdContacts />,
+        icon: <GrAlert />,
       },
       {
         name: 'Chat',
-        icon: <RiContactsLine />,
+        icon: <BsChatText />,
       },
     ],
   },
