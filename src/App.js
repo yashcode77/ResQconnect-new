@@ -4,7 +4,7 @@ import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Admin, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
+import { Admin, Login, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
 import './App.css';
 import { Alerts } from './pages';
 
@@ -68,6 +68,7 @@ const App = () => {
                 {/* dashboard  */}
                 <Route path="/" element={(<Admin />)} />
                 <Route path="/Admin" element={(<Admin />)} />
+                <Route path="/Login" element={(<Login />)} />
 
                 {/* pages  */}
                 <Route path="/Agencies" element={<Orders />} />
@@ -102,3 +103,75 @@ const App = () => {
 };
 
 export default App;
+
+// NEW CODE
+
+// import React, { useEffect } from 'react';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import { FiSettings } from 'react-icons/fi';
+// import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+
+// // import { ThemeSettings } from './components'; // Exclude Navbar and Sidebar
+// import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
+// import { Admin, Login, Orders, Alerts, Employees, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor, Pyramid, Stacked, Calendar } from './pages';
+// import './App.css';
+// import { useStateContext } from './contexts/ContextProvider';
+
+// const App = () => {
+//   const { setCurrentColor, setCurrentMode, currentMode, currentColor, themeSettings, setThemeSettings } = useStateContext();
+
+//   useEffect(() => {
+//     const currentThemeColor = localStorage.getItem('colorMode');
+//     const currentThemeMode = localStorage.getItem('themeMode');
+//     if (currentThemeColor && currentThemeMode) {
+//       setCurrentColor(currentThemeColor);
+//       setCurrentMode(currentThemeMode);
+//     }
+//   }, []);
+
+//   return (
+//     <div className={currentMode === 'Dark' ? 'dark' : ''}>
+//       <BrowserRouter>
+//         <Routes>
+//           <Route
+//             path="/"
+//             element={
+//               <div className="flex relative dark:bg-main-dark-bg">
+//                 <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
+//                   <TooltipComponent content="Settings" position="Top">
+//                     <button
+//                       type="button"
+//                       onClick={() => setThemeSettings(true)}
+//                       style={{ background: currentColor, borderRadius: '50%' }}
+//                       className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray"
+//                     >
+//                       <FiSettings />
+//                     </button>
+//                   </TooltipComponent>
+//                 </div>
+//                 <div className="w-0 dark:bg-secondary-dark-bg">
+//                   <Sidebar />
+//                 </div>
+//                 <div className="dark:bg-main-dark-bg bg-main-bg min-h-screen w-full">
+//                   <Navbar />
+//                   {themeSettings && <ThemeSettings />}
+//                   <Route path="/" element={<Admin />} />
+//                   <Route path="/Admin" element={<Admin />} />
+//                   <Route path="/Agencies" element={<Orders />} />
+//                   <Route path="/Alerts" element={<Alerts />} />
+//                   {/* Other routes */}
+//                   <Footer />
+//                 </div>
+//               </div>
+//             }
+//           />
+//           <Route path="/Login" element={<Login />} />
+//           {/* Add other routes without Sidebar and Navbar here */}
+//           {/* Example: <Route path="/NoSidebarNoNavbar" element={<ComponentWithoutSidebarAndNavbar />} /> */}
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
+//   );
+// };
+
+// export default App;
